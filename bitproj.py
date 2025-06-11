@@ -1,11 +1,11 @@
-import string
-def set(set,Setsize):
-    set = (int)(str.pow(2,Setsize))
+def subsets(input, size):
+    total = 2 ** size
     
-    for outer in range(0,set):
-        for inner in range(0,set):
-            if((outer &(1<<inner))>0):
-                print(set[inner],end="")
+    for outer in range(total):
+        for inner in range(size):
+            if (outer & (1 << inner)) > 0:
+                print(input[inner], end="")
         print("")
-input11= input("Enter a string: ")
-set(input11, len(input11))
+
+input = input("Enter a string: ")
+subsets(input, len(input))
